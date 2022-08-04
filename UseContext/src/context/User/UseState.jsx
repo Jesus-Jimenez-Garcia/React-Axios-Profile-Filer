@@ -27,9 +27,9 @@ const UserState = (props) => {
   const getProfile = async (id) => {
     try {
       const res = await axios.get("https://reqres.in/api/users/" + id);
-      const { data }= res;
+      const { data } = res;
       dispatch({ type: GET_PROFILE, payload: data.data });
-    } catch (error) {}
+    } catch (error) { }
   };
 
   return (

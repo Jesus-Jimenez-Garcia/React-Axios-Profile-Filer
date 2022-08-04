@@ -2,18 +2,24 @@ import React, { useContext, useEffect } from "react";
 import UserContext from "../context/User/UserContext";
 
 const UsersList = () => {
-  const { users, getUsers } = useContext(UserContext);
+  const { users, getUsers, getProfile } = useContext(UserContext);
 
   useEffect(() => {
     getUsers();
     console.log(users);
   }, []);
 
-  return (
-    users.map(user => (
-      <a href="" key={user.id}>{`${user.first_name} ${user.last_name}`}</a>
-    ))
-  )
+  return users.map((user) => (
+    <div className="list-group h-100">
+    <a
+      className="list-group-item list-group-item-action d-flex flex-row justify-content-start"
+      href="#!"
+      key={user.id} onClick={()=> getProfile(user.id)}>
+        <img src={user.avatar} className="img-fluid mr-4 rounded-circle" width="70" />
+      <p>{`${user.first_name} ${user.last_name}`}</p>
+    </a>
+    </div>
+  ));
 };
 
 export default UsersList;

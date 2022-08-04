@@ -18,12 +18,18 @@ function App() {
 
   return (
     <UserState>
-      <h1>Hello</h1>
-      <UserList />
-      <Profile />
-
+      <div className="container p-4">
+        <div className="row">
+          <div className="col-md-7">
+            <UserList />
+          </div>
+          <div className="col-md-5">
+            <Profile />
+          </div>
+        </div>
+      </div>
     </UserState>
-  )
+  );
 }
 
 export default App
