@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import UserContext from "../context/User/UserContext";
 
-const UserList = () => {
-    return (
-        <div>
-            User List
-        </div>
-    )
-}
+const UsersList = () => {
+  const { users, getUsers } = useContext(UserContext);
 
-export default UserList
+  useEffect(() => {
+    getUsers();
+    console.log(users);
+  }, []);
+
+  return (
+    users.map(user => (
+      <a href="" key={user.id}>{`${user.first_name} ${user.last_name}`}</a>
+    ))
+  )
+};
+
+export default UsersList;

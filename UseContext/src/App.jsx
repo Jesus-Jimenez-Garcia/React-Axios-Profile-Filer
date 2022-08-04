@@ -1,26 +1,28 @@
 import './App.css'
-import { Fragment } from 'react'
+
 
 // components
 
 import Profile from './components/Profile'
 import UserList from './components/UserList'
-import React from 'react'
+
 
 // Context
 
 import UserState from './context/User/UseState'
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
 
   return (
-    <>
+    <UserState>
       <h1>Hello</h1>
       <UserList />
       <Profile />
 
-    </>
+    </UserState>
   )
 }
 
