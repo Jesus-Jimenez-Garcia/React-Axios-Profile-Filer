@@ -10,7 +10,7 @@ const UsersList = () => {
   }, []);
 
   return users.map((user) => (
-    <div className="list-group h-100">
+    <div className="list-group">
     <a
       className="list-group-item list-group-item-action d-flex flex-row justify-content-start"
       href="#!"

@@ -19,7 +19,7 @@ function App() {
   return (
     <UserState>
       <div className="container p-4">
-        <div className="row">
+        <div className='row'>
           <div className="col-md-7">
             <UserList />
           </div>
